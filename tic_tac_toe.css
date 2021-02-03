@@ -1,0 +1,66 @@
+#Block{
+  background: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin-top: 50px;
+  width: 460px;
+}
+
+body{
+  background-repeat: no-repeat 
+  background:fixed;
+  background-size: cover;
+}
+.tic{
+	margin-right: 200px;
+}
+#Block > div{
+  background:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+}
+
+.btn{
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  position: relative;
+  font-size: 16px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  border-radius: 20px;
+  background-color: grey;
+  color: white;
+}
+
+.status{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 460px;
+}
+
+
+.cell{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 20px;
+}
+.x::before {
+   content: 'x';
+
+   font-size: 200px;
+}
+
+.o::before {
+	content :'o';
+	font-size: 200px;
+}
