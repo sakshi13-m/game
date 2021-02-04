@@ -4,15 +4,35 @@ const cell = document.querySelectorAll(".cell");
 
 let turn = true;
 
-function winner_name(r11){
-	if( r11 === 'x'){
+var p1 = 0;
+var p2 = 0;
+var tie = 0;
+
+
+function stats(winner){
+	if(winner === 'p1'){
+		document.getElementById('p1').innerHTML = ++p1;
+	}else if(winner === 'p2'){
+		document.getElementById('p2').innerHTML = ++p2;
+	}else{
+		document.getElementById('tie').innerHTML = ++tie;
+	}
+}
+
+
+function winner_name(player){
+
+	if( player === 'x'){
 		alert('Player 1 won!!');
+		stats('p1');
 		Reset();
 	}else{
 		alert('Player 2 won!!');
+		stats('p2');
 		Reset();
 	}
 }
+
 
 function check_draw(){
 	for (const i of cell){
@@ -23,6 +43,7 @@ function check_draw(){
 		}
 	}
 	alert('Its a Draw!!');
+	stats('p3');
 	Reset();
 }
 
@@ -99,3 +120,4 @@ reset1.addEventListener('click',Reset);
 for (const i of cell){
 	i.addEventListener('click',cellClick);
 }
+
